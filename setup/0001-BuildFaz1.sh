@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BDROOT=`cat tmp/bdroot`
-TARGET=`cat tmp/target`
+BDROOT=`cat ../tmp/bdroot`
+TARGET=`cat ../tmp/target`
 
 
 echo -e "\e[32m-------------------------------------------------"
