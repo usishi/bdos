@@ -18,13 +18,13 @@ echo -e "\t Chapter 5.4"
 echo -e "\e-------------------------------------------------\e[0m"
 echo "binutils Faz 1"
 cd $BDROOT/sources
-BINUTILS=`ls binutils* | sed -s 's/.tar.bz2//g'`
+BINUTILS=`ls binutils*tar* | sed -s 's/.tar.bz2//g'`
 rm -rf $BINUTILS
 sleep 3
 tar -xf $BINUTILS.tar.bz2
 cd $BINUTILS && mkdir -v build && cd build
 ../configure --prefix=/tools --with-sysroot=$BDROOT --with-lib-path=/tools/lib --target=$BDTARGET --disable-nls --disable-werror
-make -j20
+make -j20 
 case $(uname -m) in
   x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;
 esac
@@ -33,24 +33,24 @@ make install
 echo -e "binutils Faz 1 TAMAMLANDI, \n Simdi GCC Faz 1 hazirlanacak \nbir tusa basarak devam edin ..."
 read
 cd $BDROOT/sources
-GCCFOLDER=`ls gcc-* | sed -s 's/.tar.bz2//g'`
+GCCFOLDER=`ls gcc-*tar* | sed -s 's/.tar.bz2//g'`
 rm -rf $GCCFOLDER
 tar -xf $GCCFOLDER.tar.bz2
 cd $GCCFOLDER
 echo "`pwd`"
-WORKFILE=`ls ../mpfr-* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
+WORKFILE=`ls ../mpfr-*tar* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
 echo $WORKFILE
 tar -xf ../$WORKFILE.tar.xz
 mv $WORKFILE mpfr
 
 
-WORKFILE=`ls ../gmp-* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
+WORKFILE=`ls ../gmp-*tar* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
 echo $WORKFILE
 tar -xf ../$WORKFILE.tar.xz
 mv $WORKFILE gmp
 
 
-WORKFILE=`ls ../mpc-* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
+WORKFILE=`ls ../mpc-*tar* | sed -s 's/.tar.xz//g'| sed -s 's/..\///g'`
 echo $WORKFILE
 tar -xf ../$WORKFILE.tar.xz
 mv $WORKFILE mpc
