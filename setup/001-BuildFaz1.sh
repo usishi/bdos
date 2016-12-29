@@ -1,8 +1,5 @@
 #!/bin/bash
 
-BDROOT=`cat ../tmp/bdroot`
-TARGET=`cat ../tmp/target`
-
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"
@@ -26,7 +23,7 @@ rm -rf $BINUTILS
 sleep 3
 tar -xf $BINUTILS.tar.bz2
 cd $BINUTILS && mkdir -v build && cd build
-../configure --prefix=/tools --with-sysroot=$BDROOT --with-lib-path=/tools/lib --target=$TARGET --disable-nls --disable-werror
+../configure --prefix=/tools --with-sysroot=$BDROOT --with-lib-path=/tools/lib --target=$BDTARGET --disable-nls --disable-werror
 make -j20
 case $(uname -m) in
   x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;
@@ -75,6 +72,6 @@ done
 mkdir build
 cd build
 
-../configure --target=$TARGET --prefix=/tools --with-glibc-version=2.11 --with-sysroot=$BDROOT --with-newlib --without-headers --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx --enable-languages=c,c++
+../configure --target=$BDTARGET --prefix=/tools --with-glibc-version=2.11 --with-sysroot=$BDROOT --with-newlib --without-headers --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx --enable-languages=c,c++
 
 make -j20 && make install
