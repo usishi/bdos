@@ -38,3 +38,7 @@ jspm_packages
 
 # download directories
 sources
+
+# MacOS directories
+.DS_Store
+._.DS_Store
