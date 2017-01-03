@@ -5,7 +5,7 @@
 #
 source ./definitions
 
-echo -e "Libstdc TAMAMLANDI \nSimdi Binutils FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
+echo -e "Binutils FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.9"
 echo -e "\e--------------------------------------------------\e[0m"

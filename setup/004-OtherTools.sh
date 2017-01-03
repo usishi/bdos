@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Chapter 5.11 ve diger 5.x bolumleri
+# Chapter 5.11 - 5.36 bolumleri
 #
 #
 source ./definitions
@@ -391,4 +391,17 @@ echo -e "Bekleyin ..."
 strip --strip-debug /tools/lib/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
 rm -rf /tools/{,share}/{info,man,doc}
+
+echo -e "Stripping TAMAMLANDI. \nSimdi $BDROOT/tools dizini root'a ait kilinacak \nbir tusa basarak devam edin ..."
+echo -e "\e[32m-------------------------------------------------"
+echo -e "\t Chapter 5.36"
+echo -e "\e--------------------------------------------------\e[0m"
+echo "Chown"
+read
+echo -e "Root için BDROOT export ediliyor"
+echo "Root moduna gecin"
+sudo su -
+echo `pwd`
+echo "BDROOT=/bdroot; export BDROOT" >> /root/.bashrc
+chown -R root:root $BDROOT/tools
 
