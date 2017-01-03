@@ -53,7 +53,7 @@ E2FSPROGS_FOLDER="e2fsprogs-1.43.1"
 EUDEV_FILE="eudev-3.2.tar.gz"
 EUDEV_FOLDER="eudev-3.2"
  
-EXPAT_FILE"expat-2.2.0.tar.bz2"
+EXPAT_FILE="expat-2.2.0.tar.bz2"
 EXPAT_FOLDER="expat-2.2.0"
  
 EXPECT_FILE="expect5.45.tar.gz"
