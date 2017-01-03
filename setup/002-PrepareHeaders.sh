@@ -53,7 +53,7 @@ read
 cd $BDROOT/sources
 cd $GCC_FOLDER
 echo `pwd`
-mkdir -v build-libtsdc
+mkdir -v build-libstdc
 cd build-libstdc
 ../libstdc++-v3/configure --host=$BDROOT --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDROOT/include/c++/6.2.0
 make -j20 && make install
