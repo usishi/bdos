@@ -11,3 +11,5 @@ echo -e "\t Chapter 5.11"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Tcl"
 read
+echo -e "Bekleyin ..."
+

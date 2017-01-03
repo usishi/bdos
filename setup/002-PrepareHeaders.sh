@@ -5,12 +5,14 @@
 #
 source ./definitions
 
-echo -e "Linux API Headers hazirlanacak. \nbir tusa basarak devam edin ..."
+echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.6"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Linux API Headers"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 rm -rf $LINUX_FOLDER
 tar -xf $LINUX_FILE
@@ -26,6 +28,8 @@ echo -e "\t Chapter 5.7"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Glibc"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 rm -rf $GLIBC_FOLDER
 tar -xf $GLIBC_FILE
@@ -40,16 +44,18 @@ make -j20 && make install
 echo 'int main(){}' > dummy.c
 $BDTARGET-gcc dummy.c
 readelf -l a.out | grep ': /tools'
-echo -e "[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\n ciktisi goruntulenmiyorsa hata olustu.\n CTRL-C ile cikis yapin"
+echo -e "**[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]**\nciktisi goruntulenmiyorsa hata olustu.\nCTRL-C ile cikis yapin"
 read
 rm -v dummy.c a.out
 
-echo -e "Glibc TAMAMLANDI. \nSimdi Libstdc hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Glibc TAMAMLANDI. \nSimdi Libstdc hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.8"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Libstdc"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 cd $GCC_FOLDER
 echo `pwd`
@@ -58,12 +64,14 @@ cd build-libstdc
 ../libstdc++-v3/configure --host=$BDTARGET --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDTARGET/include/c++/6.2.0
 make -j20 && make install
 
-echo -e "Libstdc TAMAMLANDI \nSimdi Binutils FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Libstdc TAMAMLANDI \nSimdi Binutils FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.9"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Binutils Faz 2"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 cd $BINUTILS_FOLDER
 mkdir -v build-faz2
@@ -78,12 +86,14 @@ make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin
 
-echo -e "Binutils FAZ 2 TAMAMLANDI \nSimdi GCC FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Binutils FAZ 2 TAMAMLANDI \nSimdi GCC FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.10"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "GCC Faz 2"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 rm -rf $GCC_FOLDER
 tar -xf $GCC_FILE
@@ -123,7 +133,7 @@ ln -sv gcc /tools/bin/cc
 echo 'int main(){}' > dummy.c
 cc dummy.c
 readelf -l a.out | grep ': /tools'
-echo -e "[Requesting program interpreter: /tools/lib64/ld-linux.so.2]\n ciktisi goruntulenmiyorsa hata olustu.\n CTRL-C ile cikis yapin"
+echo -e "**[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]**\nciktisi goruntulenmiyorsa hata olustu.\nCTRL-C ile cikis yapin"
 read
 rm -v dummy.c a.out
 

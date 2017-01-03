@@ -8,6 +8,8 @@ source ./definitions
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"
 echo -e "\e--------------------------------------------------\e[0m"
+echo "/bin/sh kontrolu"
+
 if [[ "`ls -l /bin/sh`" == *dash* ]]; then
  echo -e "dash yerine bash kullanilmali"
  echo -e "\e[31m Lütfen Pencerede 'NO' seciniz !!!\n Simdi devam etmek icin bir tusa basiniz \e[0m"
@@ -17,10 +19,13 @@ else
  echo -e "sh /bin/bash'e yonlenmis sorun yok\n"
 fi
 
+echo -e "Binutils Faz 1 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.4"
 echo -e "\e--------------------------------------------------\e[0m"
-echo "binutils Faz 1"
+echo "Binutils Faz 1"
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 rm -rf $BINUTILS_FOLDER
 sleep 3
@@ -33,12 +38,14 @@ case $(uname -m) in
 esac
 make install
 
-echo -e "binutils Faz 1 TAMAMLANDI, \n Simdi GCC Faz 1 hazirlanacak \nbir tusa basarak devam edin ..."
+echo -e "Binutils Faz 1 TAMAMLANDI \nSimdi GCC Faz 1 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.5"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "GCC Faz 1"
 read
+echo -e "Bekleyin ..."
+
 cd $BDROOT/sources
 rm -rf $GCC_FOLDER
 tar -xf $GCC_FILE.tar.bz2
