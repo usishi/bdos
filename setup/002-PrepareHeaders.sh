@@ -5,7 +5,7 @@
 #
 source ./definitions
 
-echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
+echo -e "Linux API Headers hazirlanacak. \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.6"
 echo -e "\e--------------------------------------------------\e[0m"
@@ -20,7 +20,7 @@ make mrproper
 make INSTALL_HDR_PATH=dest headers_install
 cp -rv dest/include/* /tools/include
 
-echo -e "Linux API Headers TAMAMLANDI, \n Simdi Glibc hazirlanacak \nbir tusa basarak devam edin ..."
+echo -e "Linux API Headers TAMAMLANDI. \nSimdi Glibc hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.7"
 echo -e "\e--------------------------------------------------\e[0m"
@@ -44,7 +44,7 @@ echo -e "[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\n c
 read
 rm -v dummy.c a.out
 
-echo -e "Glibc TAMAMLANDI, \n Simdi Libstdc hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Glibc TAMAMLANDI. \nSimdi Libstdc hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.8"
 echo -e "\e--------------------------------------------------\e[0m"
@@ -55,10 +55,10 @@ cd $GCC_FOLDER
 echo `pwd`
 mkdir -v build-libstdc
 cd build-libstdc
-../libstdc++-v3/configure --host=$BDROOT --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDROOT/include/c++/6.2.0
+../libstdc++-v3/configure --host=$BDTARGET --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDTARGET/include/c++/6.2.0
 make -j20 && make install
 
-echo -e "Libstdc TAMAMLANDI, \n Simdi Binutils FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Libstdc TAMAMLANDI \nSimdi Binutils FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.9"
 echo -e "\e--------------------------------------------------\e[0m"
@@ -69,16 +69,16 @@ cd $BINUTILS_FOLDER
 mkdir -v build-faz2
 cd build-faz2
 
-CC=$BDROOT-gcc
-AR=$BDROOT-ar
-RANLIB=$BDROOT-ranlib
+CC=$BDTARGET-gcc
+AR=$BDTARGET-ar
+RANLIB=$BDTARGET-ranlib
 ../configure --prefix=/tools --disable-nls --disable-werror --with-lib-path=/tools/lib --with-sysroot
 make -j20 && make install
 make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin
 
-echo -e "Binutils FAZ 2 TAMAMLANDI, \n Simdi GCC FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
+echo -e "Binutils FAZ 2 TAMAMLANDI \nSimdi GCC FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.10"
 echo -e "\e--------------------------------------------------\e[0m"
