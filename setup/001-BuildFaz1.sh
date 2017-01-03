@@ -7,7 +7,7 @@ source ./definitions
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 if [[ "`ls -l /bin/sh`" == *dash* ]]; then
  echo -e "dash yerine bash kullanilmali"
  echo -e "\e[31m Lütfen Pencerede 'NO' seciniz !!!\n Simdi devam etmek icin bir tusa basiniz \e[0m"
@@ -19,7 +19,7 @@ fi
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.4"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "binutils Faz 1"
 cd $BDROOT/sources
 rm -rf $BINUTILS_FOLDER
@@ -36,7 +36,7 @@ make install
 echo -e "binutils Faz 1 TAMAMLANDI, \n Simdi GCC Faz 1 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.5"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "GCC Faz 1"
 read
 cd $BDROOT/sources

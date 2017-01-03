@@ -8,7 +8,7 @@ source ./definitions
 echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.6"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "Linux API Headers"
 read
 cd $BDROOT/sources
@@ -23,7 +23,7 @@ cp -rv dest/include/* /tools/include
 echo -e "Linux API Headers TAMAMLANDI, \n Simdi Glibc hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.7"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "Glibc"
 read
 cd $BDROOT/sources
@@ -40,14 +40,14 @@ make -j20 && make install
 echo 'int main(){}' > dummy.c
 $BDTARGET-gcc dummy.c
 readelf -l a.out | grep ': /tools'
-rm -v dummy.c a.out
 echo -e "[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\n ciktisi goruntulenmiyorsa hata olustu.\n CTRL-C ile cikis yapin"
 read
+rm -v dummy.c a.out
 
 echo -e "Glibc TAMAMLANDI, \n Simdi Libstdc hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.8"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "Libstdc"
 read
 cd $BDROOT/sources
@@ -61,7 +61,7 @@ make -j20 && make install
 echo -e "Libstdc TAMAMLANDI, \n Simdi Binutils FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.9"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "Binutils Faz 2"
 read
 cd $BDROOT/sources
@@ -81,7 +81,7 @@ cp -v ld/ld-new /tools/bin
 echo -e "Binutils FAZ 2 TAMAMLANDI, \n Simdi GCC FAZ 2 hazirlacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.10"
-echo -e "\e-------------------------------------------------\e[0m"
+echo -e "\e--------------------------------------------------\e[0m"
 echo "GCC Faz 2"
 read
 cd $BDROOT/sources
