@@ -3,7 +3,7 @@
 # Chapter 5.3 & 5.4 & 5.5
 #
 #
-source ./definitons
+source ./definitions
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"

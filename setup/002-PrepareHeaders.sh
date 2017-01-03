@@ -3,6 +3,8 @@
 # Chapter 5.6 & 5.7 & 5.8 & 5.9 & 5.10
 #
 #
+source ./definitions
+
 echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.6"
