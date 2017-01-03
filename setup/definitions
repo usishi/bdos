@@ -2,10 +2,10 @@ XMLPARSER_FILE="XML-Parser-2.44.tar.gz"
 XMLPARSER_FOLDER="XML-Parser-2.44"
 
 ACL_FILE="acl-2.2.52.src.tar.gz"
-ACL_FOLDER="acl-2.2.52.src"
+ACL_FOLDER="acl-2.2.52"
 
 ATTR_FILE="attr-2.4.47.src.tar.gz"
-ATTR_FOLDER="attr-2.4.47.src"
+ATTR_FOLDER="attr-2.4.47"
 
 AUTOCONF_FILE="autoconf-2.69.tar.xz"
 AUTOCONF_FOLDER="autoconf-2.69"
@@ -199,7 +199,7 @@ TAR_FILE="tar-1.29.tar.xz"
 TAR_FOLDER="tar-1.29"
  
 TCLCORE_FILE="tcl-core8.6.6-src.tar.gz"
-TCLCORE_FOLDER="tcl-core8.6.6-src"
+TCLCORE_FOLDER="tcl8.6.6"
  
 TEXTINFO_FILE="texinfo-6.1.tar.xz"
 TEXTINFO_FOLDER="texinfo-6.1"
