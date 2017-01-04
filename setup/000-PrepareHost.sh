@@ -2,6 +2,7 @@
 
 if [[ ! -d /bdroot ]]; then  
   sudo mkdir -pv /bdroot
+  sudo chown bdosadmin:bdosadmin /bdroot
 fi
 
 BDROOT=/bdroot
@@ -11,9 +12,10 @@ if [[ ! -d $BDROOT/setup ]]; then
 git clone https://github.com/usishi/bdos.git $BDROOT
 fi
 cd $BDROOT
+echo -e "\e[32mPaket Kontrolu yapiliyor.\e[0m"
 setup/version-check.sh
 while true; do
-    read -p "Tum paketleri sorunsuz gozukuyor mu ?" eh
+    read -p "Tum paketleri sorunsuz gozukuyor mu ?(e/h)" eh
     case $eh in
         [Ee]* ) break;;
         [Hh]* ) exit;;
@@ -25,7 +27,7 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 3.1"
 echo -e "\e-------------------------------------------------\e[0m"
 if [[ ! -d $BDROOT/sources ]]; then
- mkdir -v $BDROOT/sources
+ mkdir -v $BDROOT/sources 
  chmod -v a+wt $BDROOT/sources
  wget --input-file=setup/sources.list --continue --directory-prefix=$BDROOT/sources
  pushd $BDROOT/sources
@@ -67,5 +69,5 @@ else
   echo -e "/tools icerigi bosaltildi\n"
 fi
 echo -e "Lutfen su komutu calistirin : \e[1;34m source ~/.bash_profile  \e[0m"
-echo "Simdi \e[1;34m $BDROOT/setup/001-BuildFaz1.sh \e[0m komutu ile devam edin."
+echo -e "Simdi \e[1;34m $BDROOT/setup/001-BuildFaz1.sh \e[0m komutu ile devam edin."
 

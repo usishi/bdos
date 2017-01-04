@@ -219,5 +219,5 @@ VIM_FOLDER="vim-7.4"
 XZ_FILE="xz-5.2.2.tar.xz"
 XZ_FOLDER="xz-5.2.2"
  
-ZLIB_FILE="zlib-1.2.8.tar.xz"
-ZLIB_FOLDER="zlib-1.2.8"
+ZLIB_FILE="zlib-1.2.10.tar.xz"
+ZLIB_FOLDER="zlib-1.2.10"
