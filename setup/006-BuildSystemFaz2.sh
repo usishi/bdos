@@ -12,9 +12,9 @@ if [[ ! -f /root/OK ]]; then
   echo "BDOS Filesystem"
   read
   echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
-echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
-echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
-echo -e "Bekleyin ..."
+  echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+  echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+  echo -e "Bekleyin ..."
   mkdir -pv /{bin,boot,etc/{opt,sysconfig},lib/firmware,mnt}
   mkdir -pv /{sbin,var}
   install -dv -m 0750 /root
@@ -25,13 +25,11 @@ echo -e "Bekleyin ..."
   mkdir -v  /usr/libexec
   mkdir -pv /usr/share/man/man{1..8}
   mkdir -pv /bds/{,lib,etc,bin}
-
   case $(uname -m) in
    x86_64) ln -sv lib /lib64
            ln -sv lib /usr/lib64
            ln -sv lib /usr/local/lib64 ;;
   esac
-
   mkdir -v /var/{db,log,mail,spool}
   ln -sv /run /var/run
   ln -sv /run/lock /var/lock
@@ -99,11 +97,15 @@ echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
+rm -rf $LINUX_FOLDER
+tar -xf $LINUX_FILE
 cd $LINUX_FOLDER
 make mrproper
 make INSTALL_HDR_PATH=dest headers_install
 find dest/include \( -name .install -o -name ..install.cmd \) -delete
 cp -rv dest/include/* /usr/include
+cd /sources
+rm -rf $LINUX_FOLDER
 
 echo -e "Linux API Headers TAMAMLANDI \nSimdi Man-Pages hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -142,7 +144,7 @@ cd build
 ../configure --prefix=/usr --enable-kernel=2.6.32 --enable-obsolete-rpc
 make -j20 && make check
 echo "Test sonuclarini kontrol edin!"
-echo "Asagidaki testlerin fail olmasi olagandir:
+echo "Asagidaki testlerin FAIL olmasi olagandir:
 posix/tst-getaddrinfo4
 posix/tst-getaddrinfo5
 rt/tst-cputimer1 
@@ -204,6 +206,8 @@ zic -d $ZONEINFO -p America/New_York
 unset ZONEINFO
 cp -v /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 echo -e "/bds/lib" > /etc/ld.so.conf
+cd /sources
+rm -rf $GLIBC_FOLDER
 
 echo -e "Glibc TAMAMLANDI \nSimdi Toolchain hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -220,7 +224,7 @@ mv -v /tools/$(uname -m)-usishi-linux-gnu/bin/{ld,ld-old}
 mv -v /tools/bin/{ld-new,ld}
 ln -sv /tools/bin/ld /tools/$(uname -m)-usishi-linux-gnu/bin/ld
 echo -e "Birazdan yapilacak degisikliklerin 
-uygulandigina emin olmak icin dosyalara goz atın"
+uygulandigina emin olmak icin ilgili dosyalara goz atın"
 read
 gcc -dumpspecs | sed -e 's@/tools@@g'                   \
     -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
