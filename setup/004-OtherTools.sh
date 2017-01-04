@@ -29,6 +29,8 @@ make install
 chmod -v u+w /tools/lib/libtcl8.6.so
 make install-private-headers
 ln -sv tclsh8.6 /tools/bin/tclsh
+cd $BDROOT/sources
+rm -rf $TCLCORE_FOLDER
 
 echo -e "Tcl-core TAMAMLANDI. \nSimdi Expect hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -49,6 +51,8 @@ cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig > configure
 ./configure --prefix=/tools --with-tcl=/tools/lib --with-tclinclude=/tools/include
 make -j20 && make SCRIPTS="" install
+cd $BDROOT/sources
+rm -rf $EXPECT_FOLDER
 
 echo -e "Expect TAMAMLANDI. \nSimdi DejaGNU hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -67,6 +71,8 @@ cd $DEJAGNU_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make install
+cd $BDROOT/sources
+rm -rf $DEJAGNU_FOLDER
 
 echo -e "DejaGNU TAMAMLANDI. \nSimdi Check hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -78,8 +84,14 @@ echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
+cd $BDROOT/sources
+rm -rf $CHECK_FOLDER
+tar -xf $CHECK_FILE
+cd $CHECK_FOLDER
 PKG_CONFIG= ./configure --prefix=/tools
 make && make install
+cd $BDROOT/sources
+rm -rf $CHECK_FOLDER
 
 echo -e "Check TAMAMLANDI. \nSimdi Ncurses hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -99,6 +111,8 @@ echo `pwd`
 sed -i s/mawk// configure
 ./configure --prefix=/tools --with-shared --without-debug --without-ada --enable-widec --enable-overwrite
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $NCURSES_FOLDER
 
 echo -e "Ncurses TAMAMLANDI. \nSimdi Bash hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -118,6 +132,8 @@ echo `pwd`
 ./configure --prefix=/tools --without-bash-malloc
 make -j20 && make install
 ln -sv bash /tools/bin/sh
+cd $BDROOT/sources
+rm -rf $BASH_FOLDER
 
 echo -e "Bash TAMAMLANDI. \nSimdi Bzip hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -135,6 +151,8 @@ tar -xf $BZIP_FILE
 cd $BZIP_FOLDER
 echo `pwd`
 make && make PREFIX=/tools install
+cd $BDROOT/sources
+rm -rf $BZIP_FOLDER
 
 echo -e "Bzip TAMAMLANDI. \nSimdi Coreutils hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -153,6 +171,8 @@ cd $COREUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --enable-install-program=hostname
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $COREUTILS_FOLDER
 
 echo -e "Coreutils TAMAMLANDI. \nSimdi Diffutils hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -171,6 +191,8 @@ cd $DIFFUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $DIFFUTILS_FOLDER
 
 echo -e "Diffutils TAMAMLANDI. \nSimdi File hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -189,6 +211,8 @@ cd $FILE_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $FILE_FOLDER
 
 echo -e "File TAMAMLANDI. \nSimdi FindUtils hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -207,6 +231,8 @@ cd $FINDUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $FINDUTILS_FOLDER
 
 echo -e "FindUtils TAMAMLANDI. \nSimdi Gawk hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -225,6 +251,8 @@ cd $GAWK_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $GAWK_FOLDER
 
 echo -e "Gawk TAMAMLANDI. \nSimdi Gettext hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -249,6 +277,8 @@ make -C src msgfmt
 make -C src msgmerge
 make -C src xgettext
 cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin
+cd $BDROOT/sources
+rm -rf $GETTEXT_FOLDER
 
 echo -e "Gexttext TAMAMLANDI. \nSimdi Grep hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -267,6 +297,8 @@ cd $GREP_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $GREP_FOLDER
 
 echo -e "Grep TAMAMLANDI. \nSimdi Gzip hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -285,6 +317,8 @@ cd $GZIP_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $GZIP_FOLDER
 
 echo -e "Gzip TAMAMLANDI. \nSimdi M4 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -303,6 +337,8 @@ cd $M4_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $M4_FOLDER
 
 echo -e "M4 TAMAMLANDI. \nSimdi Make hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -321,6 +357,8 @@ cd $MAKE_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --without-guile
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $MAKE_FOLDER
 
 echo -e "Make TAMAMLANDI. \nSimdi Patch hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -339,6 +377,8 @@ cd $PATCH_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $PATCH_FOLDER
 
 echo -e "Patch TAMAMLANDI. \nSimdi Perl hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -360,6 +400,8 @@ make -j 20
 cp -v perl cpan/podlators/scripts/pod2man /tools/bin
 mkdir -pv /tools/lib/perl5/5.24.0
 cp -Rv lib/* /tools/lib/perl5/5.24.0
+cd $BDROOT/sources
+rm -rf $PERL_FOLDER
 
 echo -e "Perl TAMAMLANDI. \nSimdi Sed hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -378,6 +420,8 @@ cd $SED_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $SED_FOLDER
 
 echo -e "Sed TAMAMLANDI. \nSimdi Tar hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -396,6 +440,8 @@ cd $TAR_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $TAR_FOLDER
 
 echo -e "Tar TAMAMLANDI. \nSimdi Textinfo hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -414,6 +460,8 @@ cd $TEXTINFO_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $TEXTINFO_FOLDER
 
 echo -e "Textinfo TAMAMLANDI. \nSimdi Util-linux hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -432,6 +480,8 @@ cd $UTILLINUX_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --without-python --disable-makeinstall-chown --without-systemdsystemunitdir PKG_CONFIG=""
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $UTILLINUX_FOLDER
 
 echo -e "Util-linux TAMAMLANDI. \nSimdi Xz hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -450,6 +500,8 @@ cd $XZ_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
 make -j20 && make install
+cd $BDROOT/sources
+rm -rf $XZ_FOLDER
 
 echo -e "XZ TAMAMLANDI. \nSimdi Stripping yapilacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -466,16 +518,16 @@ strip --strip-debug /tools/lib/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
 rm -rf /tools/{,share}/{info,man,doc}
 
-echo -e "Stripping TAMAMLANDI. \nSimdi $BDROOT/tools dizini root'a ait kilinacak \nbir tusa basarak devam edin ..."
+echo -e "Stripping TAMAMLANDI. \nSimdi diger islemleri MANUEL yapin"
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.36"
 echo -e "\e--------------------------------------------------\e[0m"
-echo "Chown"
+echo "Chown & Root Environment"
 read
-echo -e "Root için BDROOT export ediliyor"
-echo "Root moduna gecerek asagidaki komutlari calistirin"
+echo "\e[32mRoot moduna gecerek asagidaki komutlari calistirin\e[0m"
+echo -e "Root modu icin \e[1;34msudo su -\e[0m"
 echo -e "\e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m"
 echo -e "\e[1;34m chown -R root:root $BDROOT/tools \e[0m"
 
-echo -e "Ortam hazirlandi. Sonraki adim *SYSTEM BUILD*"
-echo -e "Simdi \e[1;34m $BDROOT/setup/005-BuildSystemFaz1.sh \e[0m komutu ile devam edin."
+echo -e "Sonraki adim \e[1;34mSYSTEM BUILD\e[0m"
+echo -e "Komutlar ardindan \e[1;34m $BDROOT/setup/005-BuildSystemFaz1.sh \e[0m komutu ile devam edin."

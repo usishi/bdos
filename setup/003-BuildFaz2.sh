@@ -15,12 +15,12 @@ echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
-
 cd $BDROOT/sources
+rm -rf $BINUTILS_FOLDER
+tar -xf $BINUTILS_FILE
 cd $BINUTILS_FOLDER
-mkdir -v build-faz2
-cd build-faz2
-
+mkdir -v build
+cd build
 CC=$BDTARGET-gcc
 AR=$BDTARGET-ar
 RANLIB=$BDTARGET-ranlib
@@ -29,6 +29,8 @@ make -j20 && make install
 make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin
+cd $BDROOT/sources
+rm -rf $BINUTILS_FOLDER
 
 echo -e "Binutils FAZ 2 TAMAMLANDI \nSimdi GCC FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -40,7 +42,6 @@ echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
-
 cd $BDROOT/sources
 rm -rf $GCC_FOLDER
 tar -xf $GCC_FILE
@@ -59,19 +60,12 @@ do
 #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
   touch $file.orig
 done
-
-echo $MPFR_FOLDER
 tar -xf ../$MPFR_FILE
 mv -v $MPFR_FOLDER mpfr
-
-echo $GMP_FOLDER
 tar -xf ../$GMP_FILE
 mv -v $GMP_FOLDER gmp
-
-echo $MPC_FOLDER
 tar -xf ../$MPC_FILE
 mv -v $MPC_FOLDER mpc
-
 mkdir -v build
 cd build
 CC=$BDTARGET-gcc
@@ -81,12 +75,13 @@ RANLIB=$BDTARGET-ranlib
 ../configure --prefix=/tools --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --enable-languages=c,c++ --disable-libstdcxx-pch --disable-multilib --disable-bootstrap --disable-libgomp
 make -j20 && make install
 ln -sv gcc /tools/bin/cc
-
 echo 'int main(){}' > dummy.c
 cc dummy.c
 readelf -l a.out | grep ': /tools'
 echo -e "\e[1;34m[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\e[0m\nciktisi goruntulenmiyorsa hata olustu.\nCTRL-C ile cikis yapin"
 read
 rm -v dummy.c a.out
+cd $BDROOT/sources
+rm -rf $GCC_FOLDER
 
 echo -e "Simdi \e[1;34m $BDROOT/setup/004-OtherTools.sh \e[0m komutu ile devam edin."
