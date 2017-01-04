@@ -20,10 +20,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 6.2"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Kernel Virtual Folders"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 mkdir -pv $BDROOT/{dev,proc,sys,run}
 mknod -m 600 $BDROOT/dev/console c 5 1
@@ -43,5 +43,5 @@ echo -e "\t Chapter 6.4"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Chroot $BDROOT"
 read
-echo -e "/setup/006-BuildSystemFaz2.sh komutu ile devam edin ..."
+echo -e "\e[1;34m /setup/006-BuildSystemFaz2.sh \e[0m komutu ile devam edin ..."
 chroot "$BDROOT" /tools/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin /tools/bin/bash --login +h

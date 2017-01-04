@@ -10,10 +10,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.11"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Tcl-core"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $TCLCORE_FOLDER
@@ -23,8 +23,6 @@ echo `pwd`
 cd unix
 ./configure --prefix=/tools
 make -j20
-echo -e "Test sonuclarini kontrol edin. Hata olması KRITIK degil!"
-read
 make install
 chmod -v u+w /tools/lib/libtcl8.6.so
 make install-private-headers
@@ -37,10 +35,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.12"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Expect"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $EXPECT_FOLDER
@@ -59,10 +57,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.13"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "DejaGNU"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $DEJAGNU_FOLDER
@@ -79,10 +77,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.14"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Check"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $CHECK_FOLDER
@@ -98,10 +96,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.15"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Ncurses"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $NCURSES_FOLDER
@@ -119,10 +117,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.16"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Bash"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $BASH_FOLDER
@@ -140,10 +138,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.17"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Bzip"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $BZIP_FOLDER
@@ -159,10 +157,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.18"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Coreutils"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $COREUTILS_FOLDER
@@ -179,10 +177,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.19"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Diffutils"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $DIFFUTILS_FOLDER
@@ -199,10 +197,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.20"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "File"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $FILE_FOLDER
@@ -219,10 +217,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.21"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "FindUtils"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $FINDUTILS_FOLDER
@@ -239,10 +237,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.22"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Gawk"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $GAWK_FOLDER
@@ -259,10 +257,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.23"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Gettext"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $GETTEXT_FOLDER
@@ -285,10 +283,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.24"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Grep"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $GREP_FOLDER
@@ -305,10 +303,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.25"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Gzip"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $GZIP_FOLDER
@@ -325,10 +323,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.26"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "M4"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $M4_FOLDER
@@ -345,10 +343,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.27"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Make"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $MAKE_FOLDER
@@ -365,10 +363,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.28"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Patch"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $PATCH_FOLDER
@@ -385,10 +383,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.29"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Perl"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $PERL_FOLDER
@@ -408,10 +406,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.30"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Sed"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $SED_FOLDER
@@ -428,10 +426,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.31"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Tar"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $TAR_FOLDER
@@ -448,10 +446,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.32"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Textinfo"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $TEXTINFO_FOLDER
@@ -468,10 +466,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.33"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Util-linux"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $UTILLINUX_FOLDER
@@ -488,10 +486,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.34"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Xz"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $XZ_FOLDER
@@ -507,12 +505,12 @@ echo -e "XZ TAMAMLANDI. \nSimdi Stripping yapilacak \nbir tusa basarak devam edi
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.35"
 echo -e "\e--------------------------------------------------\e[0m"
-echo "File format not recognized kayitlari olagandir."
+echo "'File format not recognized' loglari olagandir."
 echo "Stripping"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 strip --strip-debug /tools/lib/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
@@ -523,8 +521,7 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.36"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Chown & Root Environment"
-read
-echo "\e[32mRoot moduna gecerek asagidaki komutlari calistirin\e[0m"
+echo -e "\e[32mRoot moduna gecerek asagidaki komutlari calistirin\e[0m"
 echo -e "Root modu icin \e[1;34msudo su -\e[0m"
 echo -e "\e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m"
 echo -e "\e[1;34m chown -R root:root $BDROOT/tools \e[0m"

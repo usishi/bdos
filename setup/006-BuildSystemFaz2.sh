@@ -73,8 +73,8 @@ if [[ ! -f /root/OK ]]; then
   mail:x:34:
   nogroup:x:99:
   users:x:999:" > /etc/group
-  echo -e "Yeniden BASH calistirilması gerek. Bu oturum sonlanacak.
-  Yeniden /setup/006-BuildSystemFaz2.sh calistirilmalidir!
+  echo -e "\e[32m Yeniden BASH calistirilması gerek. Bu oturum sonlanacak \e[0m.
+  Tekrar \e[1;34m /setup/006-BuildSystemFaz2.sh \e[0m calistirilmalidir!
   bir tusa basarak devam edin ..."
   read
   echo > /root/OK
@@ -92,9 +92,6 @@ echo -e "\t Chapter 6.7"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Linux API Headers"
 read
-echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
-echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
-echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 rm -rf $LINUX_FOLDER
@@ -113,9 +110,6 @@ echo -e "\t Chapter 6.8"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Man-Pages"
 read
-echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
-echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
-echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 rm -rf $MANPAGES_FOLDER
@@ -130,9 +124,6 @@ echo -e "\t Chapter 6.9"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Glibc"
 read
-echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
-echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
-echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 rm -rf $GLIBC_FOLDER
@@ -215,9 +206,6 @@ echo -e "\t Chapter 6.10"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Toolchain"
 read
-echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
-echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
-echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 mv -v /tools/bin/{ld,ld-old}
 mv -v /tools/$(uname -m)-usishi-linux-gnu/bin/{ld,ld-old}

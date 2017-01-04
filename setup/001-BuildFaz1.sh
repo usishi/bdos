@@ -26,6 +26,7 @@ echo "Binutils Faz 1"
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $BINUTILS_FOLDER
@@ -47,10 +48,10 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.5"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "GCC Faz 1"
-read
 echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
 echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+read
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
 rm -rf $GCC_FOLDER
