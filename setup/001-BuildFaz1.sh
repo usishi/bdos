@@ -3,7 +3,13 @@
 # Chapter 5.3 & 5.4 & 5.5
 #
 #
-source $BDROOT/setup/definitions
+if [[ -f $BDROOT/setup/definitions ]]; then
+	source $BDROOT/setup/definitions
+else
+	echo "definitions dosyasi bulunamadi"
+	echo "ENVIRONMENT degerlerini kontrol edin"
+	exit
+fi
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"

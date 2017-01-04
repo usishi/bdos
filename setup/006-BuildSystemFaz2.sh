@@ -2,7 +2,13 @@
 # Chapter 6.5 & ...
 #
 #
-source /setup/definitions
+if [[ -f /setup/definitions ]]; then
+  source /setup/definitions
+else
+  echo "definitions dosyasi bulunamadi"
+  echo "ENVIRONMENT degerlerini kontrol edin"
+  exit
+fi
 
 if [[ ! -f /root/OK ]]; then 
   echo -e "BDOS Filesystem hazirlanacak \nbir tusa basarak devam edin ..."

@@ -3,7 +3,13 @@
 # Chapter 5.9 & 5.10
 #
 #
-source $BDROOT/setup/definitions
+if [[ -f $BDROOT/setup/definitions ]]; then
+	source $BDROOT/setup/definitions
+else
+	echo "definitions dosyasi bulunamadi"
+	echo "ENVIRONMENT degerlerini kontrol edin"
+	exit
+fi
 
 echo -e "Binutils FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"

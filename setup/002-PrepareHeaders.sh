@@ -3,7 +3,13 @@
 # Chapter 5.6 & 5.7 & 5.8
 #
 #
-source $BDROOT/setup/definitions
+if [[ -f $BDROOT/setup/definitions ]]; then
+	source $BDROOT/setup/definitions
+else
+	echo "definitions dosyasi bulunamadi"
+	echo "ENVIRONMENT degerlerini kontrol edin"
+	exit
+fi
 
 echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
