@@ -398,11 +398,9 @@ echo -e "\e--------------------------------------------------\e[0m"
 echo "Chown"
 read
 echo -e "Root için BDROOT export ediliyor"
-echo "Root moduna gecin"
-sudo su -
-echo `pwd`
-echo "BDROOT=/bdroot; export BDROOT" >> /root/.bashrc
-chown -R root:root $BDROOT/tools
+echo "Root moduna gecerek asagidaki komutlari calistirin"
+echo -e "\e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m"
+echo -e "\e[1;34m chown -R root:root $BDROOT/tools \e[0m"
 
 echo -e "Ortam hazirlandi. Sonraki adim *SYSTEM BUILD*"
 echo -e "Simdi \e[1;34m $BDROOT/setup/005-BuildSystemFaz1.sh \e[0m komutu ile devam edin."

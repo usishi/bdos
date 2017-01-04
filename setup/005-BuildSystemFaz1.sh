@@ -3,16 +3,17 @@
 # Chapter 6.2 & 6.4
 #
 #
+BDROOT="/bdroot"
+
 if [[ "`whoami`" != "root" ]]; then
   echo "Root moduna geciliyor"
-  echo "Ardından tekrar /setup/005-BuildSystemFaz1.sh komutunu calistirin"
+  echo "Ardından tekrar $BDROOT/setup/005-BuildSystemFaz1.sh komutunu calistirin"
   sudo su -
   exit
 fi
 echo `pwd`
-sudo echo -e "BDROOT=/bdroot
-export BDROOT" >> /root/.bashrc
-BDROOT="/bdroot"
+[[ -z $BDROOT ]] && echo -e "BDROOT ayarlanmamis.\nBu komut ile ayarlayin: \e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m"
+
 
 echo -e "Kernel Virtual Folders hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
