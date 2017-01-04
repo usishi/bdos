@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Chapter 5.6 & 5.7 & 5.8 & 5.9
+# Chapter 5.6 & 5.7 & 5.8
 #
 #
 source $BDROOT/setup/definitions
@@ -66,16 +66,16 @@ echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
 echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd $BDROOT/sources
-rm -rf $GLIBC_FOLDER
-tar -xf $GLIBC_FILE
-cd $GLIBC_FOLDER
+rm -rf $GCC_FOLDER
+tar -xf $GCC_FILE
+cd $GCC_FOLDER
 echo `pwd`
 mkdir -v build
 cd build
 ../libstdc++-v3/configure --host=$BDTARGET --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDTARGET/include/c++/6.2.0
 make -j20 && make install
 cd $BDROOT/sources
-rm -rf $GLIBC_FOLDER
+rm -rf $GCC_FOLDER
 
 echo -e "Simdi \e[1;34m $BDROOT/setup/003-BuildFaz2.sh \e[0m komutu ile devam edin."
 
