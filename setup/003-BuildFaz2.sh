@@ -74,7 +74,7 @@ ln -sv gcc /tools/bin/cc
 echo 'int main(){}' > dummy.c
 cc dummy.c
 readelf -l a.out | grep ': /tools'
-echo -e "**[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]**\nciktisi goruntulenmiyorsa hata olustu.\nCTRL-C ile cikis yapin"
+echo -e "\e[1;34m[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]\e[0m\nciktisi goruntulenmiyorsa hata olustu.\nCTRL-C ile cikis yapin"
 read
 rm -v dummy.c a.out
 

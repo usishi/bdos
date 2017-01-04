@@ -20,7 +20,6 @@ echo `pwd`
 cd unix
 ./configure --prefix=/tools
 make -j20
-TZ=UTC make test
 echo -e "Test sonuclarini kontrol edin. Hata olması KRITIK degil!"
 read
 make install
@@ -43,7 +42,7 @@ echo `pwd`
 cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig > configure
 ./configure --prefix=/tools --with-tcl=/tools/lib --with-tclinclude=/tools/include
-make -j20 && make test && make SCRIPTS="" install
+make -j20 && make SCRIPTS="" install
 
 echo -e "Expect TAMAMLANDI. \nSimdi DejaGNU hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -58,7 +57,7 @@ tar -xf $DEJAGNU_FILE
 cd $DEJAGNU_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make install && make check
+make install
 
 echo -e "DejaGNU TAMAMLANDI. \nSimdi Check hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -68,7 +67,7 @@ echo "Check"
 read
 echo -e "Bekleyin ..."
 PKG_CONFIG= ./configure --prefix=/tools
-make && make check && make install
+make && make install
 
 echo -e "Check TAMAMLANDI. \nSimdi Ncurses hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -99,7 +98,7 @@ tar -xf $BASH_FILE
 cd $BASH_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --without-bash-malloc
-make -j20 && make tests && make install
+make -j20 && make install
 ln -sv bash /tools/bin/sh
 
 echo -e "Bash TAMAMLANDI. \nSimdi Bzip hazirlanacak \nbir tusa basarak devam edin ..."
@@ -129,7 +128,7 @@ tar -xf $COREUTILS_FILE
 cd $COREUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --enable-install-program=hostname
-make -j20 && make RUN_EXPENSIVE_TESTS=yes check && make install
+make -j20 && make install
 
 echo -e "Coreutils TAMAMLANDI. \nSimdi Diffutils hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -144,7 +143,7 @@ tar -xf $DIFFUTILS_FILE
 cd $DIFFUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Diffutils TAMAMLANDI. \nSimdi File hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -159,7 +158,7 @@ tar -xf $FILE_FILE
 cd $FILE_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "File TAMAMLANDI. \nSimdi FindUtils hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -174,7 +173,7 @@ tar -xf $FINDUTILS_FILE
 cd $FINDUTILS_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "FindUtils TAMAMLANDI. \nSimdi Gawk hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -189,7 +188,7 @@ tar -xf $GAWK_FILE
 cd $GAWK_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Gawk TAMAMLANDI. \nSimdi Gettext hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -225,7 +224,7 @@ tar -xf $GREP_FILE
 cd $GREP_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Grep TAMAMLANDI. \nSimdi Gzip hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -240,7 +239,7 @@ tar -xf $GZIP_FILE
 cd $GZIP_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Gzip TAMAMLANDI. \nSimdi M4 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -255,7 +254,7 @@ tar -xf $M4_FILE
 cd $M4_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "M4 TAMAMLANDI. \nSimdi Make hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -270,7 +269,7 @@ tar -xf $MAKE_FILE
 cd $MAKE_FOLDER
 echo `pwd`
 ./configure --prefix=/tools --without-guile
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Make TAMAMLANDI. \nSimdi Patch hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -285,7 +284,7 @@ tar -xf $PATCH_FILE
 cd $PATCH_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Patch TAMAMLANDI. \nSimdi Perl hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -318,7 +317,7 @@ tar -xf $SED_FILE
 cd $SED_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Sed TAMAMLANDI. \nSimdi Tar hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -333,7 +332,7 @@ tar -xf $TAR_FILE
 cd $TAR_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Tar TAMAMLANDI. \nSimdi Textinfo hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -348,7 +347,7 @@ tar -xf $TEXTINFO_FILE
 cd $TEXTINFO_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "Textinfo TAMAMLANDI. \nSimdi Util-linux hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -378,7 +377,7 @@ tar -xf $XZ_FILE
 cd $XZ_FOLDER
 echo `pwd`
 ./configure --prefix=/tools
-make -j20 && make check && make install
+make -j20 && make install
 
 echo -e "XZ TAMAMLANDI. \nSimdi Stripping yapilacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
