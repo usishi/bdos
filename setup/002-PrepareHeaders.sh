@@ -11,6 +11,9 @@ echo -e "\t Chapter 5.6"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Linux API Headers"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 
 cd $BDROOT/sources
@@ -28,6 +31,9 @@ echo -e "\t Chapter 5.7"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Glibc"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 
 cd $BDROOT/sources
@@ -54,6 +60,9 @@ echo -e "\t Chapter 5.8"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Libstdc"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 
 cd $BDROOT/sources

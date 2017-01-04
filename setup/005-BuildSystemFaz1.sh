@@ -21,6 +21,9 @@ echo -e "\t Chapter 6.2"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Kernel Virtual Folders"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 mkdir -pv $BDROOT/{dev,proc,sys,run}
 mknod -m 600 $BDROOT/dev/console c 5 1

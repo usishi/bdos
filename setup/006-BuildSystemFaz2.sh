@@ -11,7 +11,10 @@ if [[ ! -f /root/OK ]]; then
   echo -e "\e--------------------------------------------------\e[0m"
   echo "BDOS Filesystem"
   read
-  echo -e "Bekleyin ..."
+  echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
+echo -e "Bekleyin ..."
   mkdir -pv /{bin,boot,etc/{opt,sysconfig},lib/firmware,mnt}
   mkdir -pv /{sbin,var}
   install -dv -m 0750 /root
@@ -91,6 +94,9 @@ echo -e "\t Chapter 6.7"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Linux API Headers"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 cd $LINUX_FOLDER
@@ -105,6 +111,9 @@ echo -e "\t Chapter 6.8"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Man-Pages"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 rm -rf $MANPAGES_FOLDER
@@ -119,6 +128,9 @@ echo -e "\t Chapter 6.9"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Glibc"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 cd /sources
 rm -rf $GLIBC_FOLDER
@@ -199,6 +211,9 @@ echo -e "\t Chapter 6.10"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Toolchain"
 read
+echo -e "\e[32mENVIRONMENT KONTROL\e[0m"
+echo -e "\e[1;34mBDROOT=$BDROOT\e[0m"
+echo -e "\e[1;34mBDTARGET=$BDTARGET\e[0m"
 echo -e "Bekleyin ..."
 mv -v /tools/bin/{ld,ld-old}
 mv -v /tools/$(uname -m)-usishi-linux-gnu/bin/{ld,ld-old}
