@@ -54,10 +54,15 @@ do
   touch $file.orig
 done
 
+echo $MPFR_FOLDER
 tar -xf ../$MPFR_FILE
 mv -v $MPFR_FOLDER mpfr
+
+echo $GMP_FOLDER
 tar -xf ../$GMP_FILE
 mv -v $GMP_FOLDER gmp
+
+echo $MPC_FOLDER
 tar -xf ../$MPC_FILE
 mv -v $MPC_FOLDER mpc
 

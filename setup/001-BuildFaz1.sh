@@ -53,20 +53,18 @@ tar -xf $GCC_FILE
 cd $GCC_FOLDER
 echo "`pwd`"
 
-# dokümana göre bunların compile edilmesine gerek yok
-# ancak bunlar olmadan hata veriyor, yapamıyoruz.
-# dokümana göre bu programlar faz 2'de kullanılıyor.
+
 echo $MPFR_FOLDER
 tar -xf ../$MPFR_FILE
-mv $MPFR_FOLDER mpfr
+mv -v $MPFR_FOLDER mpfr
 
 echo $GMP_FOLDER
 tar -xf ../$GMP_FILE
-mv $GMP_FOLDER gmp
+mv -v $GMP_FOLDER gmp
 
 echo $MPC_FOLDER
 tar -xf ../$MPC_FILE
-mv $MPC_FOLDER mpc
+mv -v $MPC_FOLDER mpc
 
 
 for file in \
@@ -82,8 +80,8 @@ do
   touch $file.orig
 done
 
-mkdir -v build-faz1
-cd build-faz1
+mkdir -v build
+cd build
 
 ../configure --target=$BDTARGET --prefix=/tools --with-glibc-version=2.11 --with-sysroot=$BDROOT --with-newlib --without-headers --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx --enable-languages=c,c++
 
