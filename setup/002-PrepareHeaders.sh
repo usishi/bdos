@@ -64,5 +64,5 @@ cd build-libstdc
 ../libstdc++-v3/configure --host=$BDTARGET --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDTARGET/include/c++/6.2.0
 make -j20 && make install
 
-echo "Simdi \e[1;34m $BDROOT/setup/003-BuildFaz2 \e[0m komutu ile devam edin."
+echo -e "Simdi \e[1;34m $BDROOT/setup/003-BuildFaz2 \e[0m komutu ile devam edin."
 

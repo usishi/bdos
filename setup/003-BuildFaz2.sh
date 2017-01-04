@@ -78,4 +78,4 @@ echo -e "**[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]**
 read
 rm -v dummy.c a.out
 
-echo "Simdi \e[1;34m $BDROOT/setup/004-OtherTools.sh \e[0m komutu ile devam edin."
+echo -e "Simdi \e[1;34m $BDROOT/setup/004-OtherTools.sh \e[0m komutu ile devam edin."

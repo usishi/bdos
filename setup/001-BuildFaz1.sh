@@ -89,5 +89,5 @@ cd build-faz1
 
 make -j20 && make install
 
-echo "Simdi \e[1;34m $BDROOT/setup/002-PrepareHeaders.sh \e[0m komutu ile devam edin."
+echo -e "Simdi \e[1;34m $BDROOT/setup/002-PrepareHeaders.sh \e[0m komutu ile devam edin."
 
