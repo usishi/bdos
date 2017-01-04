@@ -1,10 +1,11 @@
 #!/bin/bash
 
+if [[ ! -d /bdroot ]]; then  
+  sudo mkdir -pv /bdroot
+fi
+
 BDROOT=/bdroot
 BDTARGET=x86_64-usishi-linux-gnu
-
-mkdir tmpbuild
-
 
 if [[ ! -d $BDROOT/setup ]]; then
 git clone https://github.com/usishi/bdos.git $BDROOT
@@ -18,8 +19,7 @@ while true; do
         [Hh]* ) exit;;
         * ) echo "Lutfen Evet(e) ya da Hayir(h) cevabi verin";;
     esac
-done	
-
+done
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 3.1"
@@ -67,5 +67,5 @@ else
   echo -e "/tools icerigi bosaltildi\n"
 fi
 echo -e "Lutfen su komutu calistirin : \e[1;34m source ~/.bash_profile  \e[0m"
-echo "Simdi \e[1;34m $BDROOT/setup/001-BuildFaz1.sh \e[0m dosyasi ile devam edin."
+echo "Simdi \e[1;34m $BDROOT/setup/001-BuildFaz1.sh \e[0m komutu ile devam edin."
 

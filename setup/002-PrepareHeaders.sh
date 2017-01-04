@@ -3,7 +3,7 @@
 # Chapter 5.6 & 5.7 & 5.8 & 5.9
 #
 #
-source ./definitions
+source $BDROOT/setup/definitions
 
 echo -e "Linux API Headers hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -64,5 +64,5 @@ cd build-libstdc
 ../libstdc++-v3/configure --host=$BDTARGET --prefix=/tools --disable-multilib --disable-nls --disable-libstdcxx-threads --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$BDTARGET/include/c++/6.2.0
 make -j20 && make install
 
-echo -e "002-PrepareHeaders TAMAMLANDI. \n003-BuildFaz2.sh calistirarak bir sonraki adıma gecin ..."
+echo "Simdi \e[1;34m $BDROOT/setup/003-BuildFaz2 \e[0m komutu ile devam edin."
 

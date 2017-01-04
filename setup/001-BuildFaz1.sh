@@ -3,7 +3,7 @@
 # Chapter 5.3 & 5.4 & 5.5
 #
 #
-source ./definitions
+source $BDROOT/setup/definitions
 
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 5.3"
@@ -87,3 +87,6 @@ cd build-faz1
 ../configure --target=$BDTARGET --prefix=/tools --with-glibc-version=2.11 --with-sysroot=$BDROOT --with-newlib --without-headers --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libvtv --disable-libstdcxx --enable-languages=c,c++
 
 make -j20 && make install
+
+echo "Simdi \e[1;34m $BDROOT/setup/002-PrepareHeaders.sh \e[0m komutu ile devam edin."
+

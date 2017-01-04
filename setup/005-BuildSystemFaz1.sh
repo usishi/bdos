@@ -1,11 +1,18 @@
 #!/bin/bash
 #
-# Chapter 6.x
+# Chapter 6.2 & 6.4
 #
 #
-echo "Root moduna gecin"
-sudo su -
+if [[ "`whoami`" != "root" ]]; then
+  echo "Root moduna geciliyor"
+  echo "Ardından tekrar /setup/005-BuildSystemFaz1.sh komutunu calistirin"
+  sudo su -
+  exit
+fi
 echo `pwd`
+sudo echo -e "BDROOT=/bdroot
+export BDROOT" >> /root/.bashrc
+BDROOT="/bdroot"
 
 echo -e "Kernel Virtual Folders hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -32,5 +39,5 @@ echo -e "\t Chapter 6.4"
 echo -e "\e--------------------------------------------------\e[0m"
 echo "Chroot $BDROOT"
 read
-echo -e "setup/006-BuildSystemFaz2.sh ile devam edin ..."
+echo -e "/setup/006-BuildSystemFaz2.sh komutu ile devam edin ..."
 chroot "$BDROOT" /tools/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin /tools/bin/bash --login +h

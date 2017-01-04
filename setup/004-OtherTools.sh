@@ -3,7 +3,7 @@
 # Chapter 5.11 - 5.36 bolumleri
 #
 #
-source ./definitions
+source $BDROOT/setup/definitions
 
 echo -e "Tcl-core hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -405,3 +405,5 @@ echo `pwd`
 echo "BDROOT=/bdroot; export BDROOT" >> /root/.bashrc
 chown -R root:root $BDROOT/tools
 
+echo -e "Ortam hazirlandi. Sonraki adim *SYSTEM BUILD*"
+echo "Simdi \e[1;34m $BDROOT/setup/005-BuildSystemFaz1.sh \e[0m komutu ile devam edin."

@@ -3,7 +3,7 @@
 # Chapter 5.9 & 5.10
 #
 #
-source ./definitions
+source $BDROOT/setup/definitions
 
 echo -e "Binutils FAZ 2 hazirlanacak \nbir tusa basarak devam edin ..."
 echo -e "\e[32m-------------------------------------------------"
@@ -78,4 +78,4 @@ echo -e "**[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]**
 read
 rm -v dummy.c a.out
 
-echo -e "003-BuildFaz2 TAMAMLANDI. \n004-OtherTools.sh calistirarak bir sonraki adıma gecin ..."
+echo "Simdi \e[1;34m $BDROOT/setup/004-OtherTools.sh \e[0m komutu ile devam edin."
