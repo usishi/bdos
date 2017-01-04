@@ -28,9 +28,10 @@ echo -e "Bekleyin ..."
 
 cd $BDROOT/sources
 rm -rf $BINUTILS_FOLDER
-sleep 3
-tar -xf $BINUTILS_FILE.tar.bz2
-cd $BINUTILS_FOLDER && mkdir -v build-faz1 && cd build-faz1
+tar -xf $BINUTILS_FILE
+cd $BINUTILS_FOLDER
+mkdir -v build-faz1
+cd build-faz1
 ../configure --prefix=/tools --with-sysroot=$BDROOT --with-lib-path=/tools/lib --target=$BDTARGET --disable-nls --disable-werror
 make -j20 
 case $(uname -m) in
@@ -48,7 +49,7 @@ echo -e "Bekleyin ..."
 
 cd $BDROOT/sources
 rm -rf $GCC_FOLDER
-tar -xf $GCC_FILE.tar.bz2
+tar -xf $GCC_FILE
 cd $GCC_FOLDER
 echo "`pwd`"
 
