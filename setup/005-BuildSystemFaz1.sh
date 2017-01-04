@@ -12,7 +12,7 @@ if [[ "`whoami`" != "root" ]]; then
   exit
 fi
 echo `pwd`
-[[ -z $BDROOT ]] && echo -e "BDROOT ayarlanmamis.\nBu komut ile ayarlayin: \e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m"
+[[ -z $BDROOT ]] && echo -e "BDROOT ayarlanmamis.\nBu komut ile ayarlayin: \e[1;34m echo 'BDROOT=/bdroot; export BDROOT' >> /root/.bashrc \e[0m" && exit
 
 
 echo -e "Kernel Virtual Folders hazirlanacak \nbir tusa basarak devam edin ..."
