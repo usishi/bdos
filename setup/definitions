@@ -136,8 +136,8 @@ LIBPIPELINE_FOLDER="libpipeline-1.4.1"
 LIBTOOL_FILE="libtool-2.4.6.tar.xz"
 LIBTOOL_FOLDER="libtool-2.4.6"
  
-LINUX_FILE="linux-4.7.2.tar.xz"
-LINUX_FOLDER="linux-4.7.2"
+LINUX_FILE="linux-4.8.15.tar.xz"
+LINUX_FOLDER="linux-4.8.15"
  
 M4_FILE="m4-1.4.17.tar.xz"
 M4_FOLDER="m4-1.4.17"
