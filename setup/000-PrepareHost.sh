@@ -1,12 +1,14 @@
 #!/bin/bash
 
+sudo echo "`whoami` ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
+
 if [[ ! -d /bdroot ]]; then  
   sudo mkdir -pv /bdroot
   sudo chown bdosadmin:bdosadmin /bdroot
 fi
 
 BDROOT=/bdroot
-BDTARGET=x86_64-usishi-linux-gnu
+BDTARGET=$(uname -m)-usishi-linux-gnu
 
 if [[ ! -d $BDROOT/setup ]]; then
 git clone https://github.com/usishi/bdos.git $BDROOT
@@ -27,7 +29,7 @@ echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 3.1"
 echo -e "\e-------------------------------------------------\e[0m"
 if [[ ! -d $BDROOT/sources ]]; then
- mkdir -v $BDROOT/sources 
+ sudo mkdir -v $BDROOT/sources 
  chmod -v a+wt $BDROOT/sources
  wget --input-file=setup/sources.list --continue --directory-prefix=$BDROOT/sources
  pushd $BDROOT/sources
@@ -36,8 +38,6 @@ if [[ ! -d $BDROOT/sources ]]; then
 else
  echo -e "Paketler Indirilmis\n"
 fi
-
-libdurum=0
 
 for lib in lib{gmp,mpfr,mpc}.la; do
   if find /usr/lib* -name $lib | grep -q $lib;then 
@@ -49,25 +49,27 @@ for lib in lib{gmp,mpfr,mpc}.la; do
 done
 unset lib
 
-if [[ $libdurum -gt 0 ]]; then
-  echo "Lutfen kirmizi ile belirtilmis eksik kutuphaneleri kurunuz !"
-fi
-
-
-echo "exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash" > ~/.bash_profile
-echo -e "set +h \n umask 022 \n BDROOT=$BDROOT \n LC_ALL=POSIX \n BDTARGET=$BDTARGET \n PATH=/tools/bin:/bin:/usr/bin \n export BDROOT LC_ALL BDTARGET PATH \n alias ll='ls -lF' \n alias ls='ls --color=auto' \n" > ~/.bashrc
-
-
 echo -e "\e[32m-------------------------------------------------"
 echo -e "\t Chapter 4.2"
 echo -e "\e-------------------------------------------------\e[0m"
 if [[ ! -d $BDROOT/tools ]]; then
-  mkdir -v $BDROOT/tools
-  echo -e "Lutfen su komutu calistirin : \e[1;34m sudo ln -sv $BDROOT/tools / \e[0m"
+  sudo mkdir -v $BDROOT/tools
+  sudo ln -sv $BDROOT/tools /
 else
-  rm -rf /tools/*
+  sudo rm -rf /tools/*
   echo -e "/tools icerigi bosaltildi\n"
 fi
+echo "exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash" > ~/.bash_profile
+echo "set +h
+umask 022
+BDROOT=$BDROOT
+LC_ALL=POSIX
+BDTARGET=$BDTARGET
+PATH=/tools/bin:/bin:/usr/bin
+export BDROOT LC_ALL BDTARGET PATH
+alias ll='ls -lF'
+alias ls='ls --color=auto'" > ~/.bashrc
+
 echo -e "Lutfen su komutu calistirin : \e[1;34m source ~/.bash_profile  \e[0m"
 echo -e "Simdi \e[1;34m $BDROOT/setup/001-BuildFaz1.sh \e[0m komutu ile devam edin."
 
