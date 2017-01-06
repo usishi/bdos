@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $LFS/sources
 rm -v bd_file
 rm -v bd_folder
 echo $1 > bd_file
