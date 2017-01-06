@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -v bd_file
+rm -v bd_folder
+echo $1 > bd_file
+FOLDER=`$FILE | sed -s 's/.tar.*//g'`
+echo $FOLDER > bd_folder
+tar -xvf $1
+cd $FOLDER
+mkdir -v build
+cd build
+echo "------------- simdi config yapabilirsiniz ------"

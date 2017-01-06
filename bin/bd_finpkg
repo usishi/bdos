@@ -1,0 +1,8 @@
+#!/bin/bash
+FILE=`cat bd_file`
+FOLDER=`cat bd_folder`
+
+cd $LFS/sources
+rm -rvf $FOLDER
+rm -rv bd_file
+rm -rv bd_folder
